@@ -93,35 +93,35 @@
 // console.log(solution(29));
 
 // 가장 큰 수 찾기
-function solution(array) {
-  const maxValue = Math.max(...array);
-  return [maxValue, array.indexOf(maxValue)];
-}
-console.log(solution([1, 8, 3]));
-console.log(solution([9, 10, 11, 8]));
+// function solution(array) {
+//   const maxValue = Math.max(...array);
+//   return [maxValue, array.indexOf(maxValue)];
+// }
+// console.log(solution([1, 8, 3]));
+// console.log(solution([9, 10, 11, 8]));
 
-function solution(order) {
-  const number = `${order}`.split("").map((v) => parseInt(v));
-  let count = 0;
-  number.map((v) => {
-    if (v === 3 || v === 6 || v === 9) {
-      count = count + 1;
-    }
-  });
-  return count;
-}
-
-console.log(solution(3));
-console.log(solution(29423));
-
-// 문자열 정렬하기 (2)
-// function solution(my_string) {
-//   return my_string.toLowerCase().split("").sort().join("");
+// function solution(order) {
+//   const number = `${order}`.split("").map((v) => parseInt(v));
+//   let count = 0;
+//   number.map((v) => {
+//     if (v === 3 || v === 6 || v === 9) {
+//       count = count + 1;
+//     }
+//   });
+//   return count;
 // }
 
-// console.log(solution("Bcad"));
-// console.log(solution("heLLo"));
-// console.log(solution("Python"));
+// console.log(solution(3));
+// console.log(solution(29423));
+
+// 문자열 정렬하기 (2)
+function solution(my_string) {
+  return my_string.toLowerCase().split("").sort().join("");
+}
+
+console.log(solution("Bcad"));
+console.log(solution("heLLo"));
+console.log(solution("Python"));
 
 // 가까운 수
 // function solution(array, n) {
