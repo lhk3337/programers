@@ -57,28 +57,28 @@
 // console.log(solution(976));
 
 // 숫자 찾기
-function solution(num, k) {
-  const search = (num + "")
-    .split("")
-    .map((v) => Number(v))
-    .indexOf(k);
+// function solution(num, k) {
+//   const search = (num + "")
+//     .split("")
+//     .map((v) => Number(v))
+//     .indexOf(k);
 
-  if (search > -1) {
-    return search + 1;
-  } else {
-    return -1;
-  }
-}
-console.log(solution(999, 9));
-console.log(solution(232443, 4));
-console.log(solution(123456, 7));
+//   if (search > -1) {
+//     return search + 1;
+//   } else {
+//     return -1;
+//   }
+// }
+// console.log(solution(999, 9));
+// console.log(solution(232443, 4));
+// console.log(solution(123456, 7));
 
 // 편지
-// function solution(message) {
-//   return message.split("").length * 2;
-// }
-// console.log(solution("happy birthday!"));
-// console.log(solution("I love you~"));
+function solution(message) {
+  return message.split("").length * 2;
+}
+console.log(solution("happy birthday!"));
+console.log(solution("I love you~"));
 
 // 약수 구하기
 
