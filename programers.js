@@ -49,29 +49,29 @@
 // console.log(solution(7, 15));
 
 // 제곱수 판별하기
-function solution(n) {
-  return Number.isInteger(Math.sqrt(n)) ? 1 : 2;
-}
+// function solution(n) {
+//   return Number.isInteger(Math.sqrt(n)) ? 1 : 2;
+// }
 
-console.log(solution(144));
-console.log(solution(976));
+// console.log(solution(144));
+// console.log(solution(976));
 
 // 숫자 찾기
-// function solution(num, k) {
-//   const search = (num + "")
-//     .split("")
-//     .map((v) => Number(v))
-//     .indexOf(k);
+function solution(num, k) {
+  const search = (num + "")
+    .split("")
+    .map((v) => Number(v))
+    .indexOf(k);
 
-//   if (search > -1) {
-//     return search + 1;
-//   } else {
-//     return -1;
-//   }
-// }
-// console.log(solution(999, 9));
-// console.log(solution(232443, 4));
-// console.log(solution(123456, 7));
+  if (search > -1) {
+    return search + 1;
+  } else {
+    return -1;
+  }
+}
+console.log(solution(999, 9));
+console.log(solution(232443, 4));
+console.log(solution(123456, 7));
 
 // 편지
 // function solution(message) {
