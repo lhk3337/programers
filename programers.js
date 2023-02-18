@@ -20,8 +20,23 @@
 //   console.log(solution("pfqallllabwaoclk", 2));
 
 // 중복된 문자 제거
-function solution(my_string) {
-  const duplication = my_string.split("").filter((v) => v);
-  return [...new Set(duplication)].join("");
+// function solution(my_string) {
+//   const duplication = my_string.split("").filter((v) => v);
+//   return [...new Set(duplication)].join("");
+// }
+// console.log(solution("people"));
+
+// A로 B 만들기
+function solution(before, after) {
+  function Sorted(comparisonString) {
+    return ggg.split("").sort().join("");
+  }
+
+  if (Sorted(before) === Sorted(after)) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
-console.log(solution("people"));
+console.log(solution("olleh", "hello"));
+console.log(solution("allpe", "apple"));
