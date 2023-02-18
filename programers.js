@@ -82,37 +82,37 @@
 
 // 약수 구하기
 
-function solution(n) {
-  var answer = [];
-  for (let i = 1; i <= n; i++) {
-    answer.push(i);
-  }
-  return answer.filter((value) => n % value === 0);
-}
-console.log(solution(24));
-console.log(solution(29));
+// function solution(n) {
+//   var answer = [];
+//   for (let i = 1; i <= n; i++) {
+//     answer.push(i);
+//   }
+//   return answer.filter((value) => n % value === 0);
+// }
+// console.log(solution(24));
+// console.log(solution(29));
 
 // 가장 큰 수 찾기
-// function solution(array) {
-//   const maxValue = Math.max(...array);
-//   return [maxValue, array.indexOf(maxValue)];
-// }
-// console.log(solution([1, 8, 3]));
-// console.log(solution([9, 10, 11, 8]));
+function solution(array) {
+  const maxValue = Math.max(...array);
+  return [maxValue, array.indexOf(maxValue)];
+}
+console.log(solution([1, 8, 3]));
+console.log(solution([9, 10, 11, 8]));
 
-// function solution(order) {
-//   const number = `${order}`.split("").map((v) => parseInt(v));
-//   let count = 0;
-//   number.map((v) => {
-//     if (v === 3 || v === 6 || v === 9) {
-//       count = count + 1;
-//     }
-//   });
-//   return count;
-// }
+function solution(order) {
+  const number = `${order}`.split("").map((v) => parseInt(v));
+  let count = 0;
+  number.map((v) => {
+    if (v === 3 || v === 6 || v === 9) {
+      count = count + 1;
+    }
+  });
+  return count;
+}
 
-// console.log(solution(3));
-// console.log(solution(29423));
+console.log(solution(3));
+console.log(solution(29423));
 
 // 문자열 정렬하기 (2)
 // function solution(my_string) {
