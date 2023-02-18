@@ -74,23 +74,23 @@
 // console.log(solution(123456, 7));
 
 // 편지
-function solution(message) {
-  return message.split("").length * 2;
-}
-console.log(solution("happy birthday!"));
-console.log(solution("I love you~"));
+// function solution(message) {
+//   return message.split("").length * 2;
+// }
+// console.log(solution("happy birthday!"));
+// console.log(solution("I love you~"));
 
 // 약수 구하기
 
-// function solution(n) {
-//   var answer = [];
-//   for (let i = 1; i <= n; i++) {
-//     answer.push(i);
-//   }
-//   return answer.filter((value) => n % value === 0);
-// }
-// console.log(solution(24));
-// console.log(solution(29));
+function solution(n) {
+  var answer = [];
+  for (let i = 1; i <= n; i++) {
+    answer.push(i);
+  }
+  return answer.filter((value) => n % value === 0);
+}
+console.log(solution(24));
+console.log(solution(29));
 
 // 가장 큰 수 찾기
 // function solution(array) {
