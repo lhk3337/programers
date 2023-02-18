@@ -7,14 +7,21 @@
 //   console.log(solution(12, [2, 100, 120, 600, 12, 12]));
 
 // 암호 해독
-function solution(cipher, code) {
-  const arr = cipher.split("");
+// function solution(cipher, code) {
+//     const arr = cipher.split("");
 
-  let ciperArr = [];
-  for (let i = 1; i <= arr.length / code; i++) {
-    ciperArr.push(arr[code * i - 1]);
-  }
-  return ciperArr.join("");
+//     let ciperArr = [];
+//     for (let i = 1; i <= arr.length / code; i++) {
+//       ciperArr.push(arr[code * i - 1]);
+//     }
+//     return ciperArr.join("");
+//   }
+//   console.log(solution("dfjardstddetckdaccccdegk", 4)); //a->3 t-> tack
+//   console.log(solution("pfqallllabwaoclk", 2));
+
+// 중복된 문자 제거
+function solution(my_string) {
+  const duplication = my_string.split("").filter((v) => v);
+  return [...new Set(duplication)].join("");
 }
-console.log(solution("dfjardstddetckdaccccdegk", 4)); //a->3 t-> tack
-console.log(solution("pfqallllabwaoclk", 2));
+console.log(solution("people"));
