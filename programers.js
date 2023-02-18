@@ -42,19 +42,19 @@
 // console.log(solution("allpe", "apple"));
 
 // 세균 증식
-function solution(n, t) {
-  return n * 2 ** t;
-}
-console.log(solution(2, 10));
-console.log(solution(7, 15));
+// function solution(n, t) {
+//   return n * 2 ** t;
+// }
+// console.log(solution(2, 10));
+// console.log(solution(7, 15));
 
 // 제곱수 판별하기
-// function solution(n) {
-//   return Number.isInteger(Math.sqrt(n)) ? 1 : 2;
-// }
+function solution(n) {
+  return Number.isInteger(Math.sqrt(n)) ? 1 : 2;
+}
 
-// console.log(solution(144));
-// console.log(solution(976));
+console.log(solution(144));
+console.log(solution(976));
 
 // 숫자 찾기
 // function solution(num, k) {
