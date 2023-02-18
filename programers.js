@@ -115,29 +115,29 @@
 // console.log(solution(29423));
 
 // 문자열 정렬하기 (2)
-function solution(my_string) {
-  return my_string.toLowerCase().split("").sort().join("");
-}
+// function solution(my_string) {
+//   return my_string.toLowerCase().split("").sort().join("");
+// }
 
-console.log(solution("Bcad"));
-console.log(solution("heLLo"));
-console.log(solution("Python"));
+// console.log(solution("Bcad"));
+// console.log(solution("heLLo"));
+// console.log(solution("Python"));
 
 // 가까운 수
-// function solution(array, n) {
-//   const aaa = [...array.sort().map((v) => Math.abs(v - n))];
+function solution(array, n) {
+  const aaa = [...array.sort().map((v) => Math.abs(v - n))];
 
-//   return array[aaa.indexOf(Math.min(...aaa))];
-// }
-// console.log(solution([33, 10, 28], 20));
-// console.log(solution([10, 11, 12], 13));
-// console.log(solution([1, -1], 0));
+  return array[aaa.indexOf(Math.min(...aaa))];
+}
+console.log(solution([33, 10, 28], 20));
+console.log(solution([10, 11, 12], 13));
+console.log(solution([1, -1], 0));
 
-// function solution(array, n) {
-//   return array[
-//     [...array.sort().map((v) => Math.abs(v - n))].indexOf(Math.min(...array.sort().map((v) => Math.abs(v - n))))
-//   ];
-// }
-// console.log(solution([33, 10, 28], 20));
-// console.log(solution([10, 11, 12], 13));
-// console.log(solution([1, -1], 0));
+function solution(array, n) {
+  return array[
+    [...array.sort().map((v) => Math.abs(v - n))].indexOf(Math.min(...array.sort().map((v) => Math.abs(v - n))))
+  ];
+}
+console.log(solution([33, 10, 28], 20));
+console.log(solution([10, 11, 12], 13));
+console.log(solution([1, -1], 0));
