@@ -143,17 +143,24 @@
 // console.log(solution([1, -1], 0));
 
 // 한 번만 등장한 문자
-function solution(s) {
-  const arrString = s.split("").sort();
-  const result = {};
-  arrString.forEach((x) => {
-    result[x] = (result[x] || 0) + 1;
-  });
-  return Object.keys(result)
-    .filter((key) => result[key] === 1)
-    .join("");
-}
+// function solution(s) {
+//   const arrString = s.split("").sort();
+//   const result = {};
+//   arrString.forEach((x) => {
+//     result[x] = (result[x] || 0) + 1;
+//   });
+//   return Object.keys(result)
+//     .filter((key) => result[key] === 1)
+//     .join("");
+// }
 
-console.log(solution("abcabcadc"));
-console.log(solution("abdc"));
-console.log(solution("hello"));
+// console.log(solution("abcabcadc"));
+// console.log(solution("abdc"));
+// console.log(solution("hello"));
+
+// 이진수 더하기
+function solution(bin1, bin2) {
+  return (parseInt(bin1, 2) + parseInt(bin2, 2)).toString(2);
+}
+console.log(solution("10", "11"));
+console.log(solution("1001", "1111"));
