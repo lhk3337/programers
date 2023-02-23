@@ -124,20 +124,36 @@
 // console.log(solution("Python"));
 
 // 가까운 수
-function solution(array, n) {
-  const aaa = [...array.sort().map((v) => Math.abs(v - n))];
+// function solution(array, n) {
+//   const aaa = [...array.sort().map((v) => Math.abs(v - n))];
 
-  return array[aaa.indexOf(Math.min(...aaa))];
-}
-console.log(solution([33, 10, 28], 20));
-console.log(solution([10, 11, 12], 13));
-console.log(solution([1, -1], 0));
+//   return array[aaa.indexOf(Math.min(...aaa))];
+// }
+// console.log(solution([33, 10, 28], 20));
+// console.log(solution([10, 11, 12], 13));
+// console.log(solution([1, -1], 0));
 
-function solution(array, n) {
-  return array[
-    [...array.sort().map((v) => Math.abs(v - n))].indexOf(Math.min(...array.sort().map((v) => Math.abs(v - n))))
-  ];
+// function solution(array, n) {
+//   return array[
+//     [...array.sort().map((v) => Math.abs(v - n))].indexOf(Math.min(...array.sort().map((v) => Math.abs(v - n))))
+//   ];
+// }
+// console.log(solution([33, 10, 28], 20));
+// console.log(solution([10, 11, 12], 13));
+// console.log(solution([1, -1], 0));
+
+// 한 번만 등장한 문자
+function solution(s) {
+  const arrString = s.split("").sort();
+  const result = {};
+  arrString.forEach((x) => {
+    result[x] = (result[x] || 0) + 1;
+  });
+  return Object.keys(result)
+    .filter((key) => result[key] === 1)
+    .join("");
 }
-console.log(solution([33, 10, 28], 20));
-console.log(solution([10, 11, 12], 13));
-console.log(solution([1, -1], 0));
+
+console.log(solution("abcabcadc"));
+console.log(solution("abdc"));
+console.log(solution("hello"));
