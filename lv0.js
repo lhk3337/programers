@@ -159,8 +159,18 @@
 // console.log(solution("hello"));
 
 // 이진수 더하기
-function solution(bin1, bin2) {
-  return (parseInt(bin1, 2) + parseInt(bin2, 2)).toString(2);
+// function solution(bin1, bin2) {
+//   return (parseInt(bin1, 2) + parseInt(bin2, 2)).toString(2);
+// }
+// console.log(solution("10", "11"));
+// console.log(solution("1001", "1111"));
+
+// 7의 갯수
+function solution(array) {
+  return array
+    .join("")
+    .split("")
+    .filter((v) => v === "7").length;
 }
-console.log(solution("10", "11"));
-console.log(solution("1001", "1111"));
+console.log(solution([7, 77, 17]));
+console.log(solution([10, 29]));
