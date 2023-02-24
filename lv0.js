@@ -166,11 +166,29 @@
 // console.log(solution("1001", "1111"));
 
 // 7의 갯수
-function solution(array) {
-  return array
+// function solution(array) {
+//   return array
+//     .join("")
+//     .split("")
+//     .filter((v) => v === "7").length;
+// }
+// console.log(solution([7, 77, 17]));
+// console.log(solution([10, 29]));
+
+// k의 개수
+
+function solution(i, j, k) {
+  let arr = [];
+  for (let n = i; n <= j; n++) {
+    arr.push(n);
+  }
+
+  return arr
     .join("")
     .split("")
-    .filter((v) => v === "7").length;
+    .filter((v) => Number(v) === k).length;
 }
-console.log(solution([7, 77, 17]));
-console.log(solution([10, 29]));
+
+console.log(solution(1, 13, 1));
+console.log(solution(10, 50, 5));
+console.log(solution(3, 10, 2));
