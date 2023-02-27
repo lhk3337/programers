@@ -177,18 +177,31 @@
 
 // k의 개수
 
-function solution(i, j, k) {
-  let arr = [];
-  for (let n = i; n <= j; n++) {
-    arr.push(n);
-  }
+// function solution(i, j, k) {
+//   let arr = [];
+//   for (let n = i; n <= j; n++) {
+//     arr.push(n);
+//   }
 
-  return arr
-    .join("")
-    .split("")
-    .filter((v) => Number(v) === k).length;
+//   return arr
+//     .join("")
+//     .split("")
+//     .filter((v) => Number(v) === k).length;
+// }
+
+// console.log(solution(1, 13, 1));
+// console.log(solution(10, 50, 5));
+// console.log(solution(3, 10, 2));
+
+// 잘라서 배열로 저장하기
+function solution(my_str, n) {
+  const arr = my_str.split("");
+  let answer = [];
+  for (let i = 0; i < arr.length; i += n) {
+    answer.push(arr.slice(i, i + n).join(""));
+  }
+  return answer;
 }
 
-console.log(solution(1, 13, 1));
-console.log(solution(10, 50, 5));
-console.log(solution(3, 10, 2));
+console.log(solution("abc1Addfggg4556b", 6));
+console.log(solution("abcdef123", 3));
