@@ -242,56 +242,68 @@
 // );
 
 // 로그인 성공?
-function solution(id_pw, db) {
-  const [id, pw] = id_pw;
+// function solution(id_pw, db) {
+//   const [id, pw] = id_pw;
 
-  let result = "";
+//   let result = "";
 
-  for (let i = 0; i < db.length; i++) {
-    if (db[i][0] === id && db[i][1] === pw) {
-      result = "login";
-      break;
-    }
-    if (db[i][0] === id) {
-      if (db[i][1] !== pw) {
-        result = "wrong pw";
-        break;
-      }
-    } else {
-      result = "fail";
-    }
+//   for (let i = 0; i < db.length; i++) {
+//     if (db[i][0] === id && db[i][1] === pw) {
+//       result = "login";
+//       break;
+//     }
+//     if (db[i][0] === id) {
+//       if (db[i][1] !== pw) {
+//         result = "wrong pw";
+//         break;
+//       }
+//     } else {
+//       result = "fail";
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(
+//   solution(
+//     ["meosseugi", "1234"],
+//     [
+//       ["meosseugi", "1234"],
+//       ["rardss", "123"],
+//       ["yyoom", "1234"],
+//     ]
+//   )
+// );
+
+// console.log(
+//   solution(
+//     ["programmer01", "15789"],
+//     [
+//       ["programmer02", "111111"],
+//       ["programmer00", "134"],
+//       ["programmer01", "1145"],
+//     ]
+//   )
+// );
+// console.log(
+//   solution(
+//     ["rabbit04", "98761"],
+//     [
+//       ["jaja11", "98761"],
+//       ["rabbit00", "111333"],
+//       ["krong0313", "29440"],
+//     ]
+//   )
+// );
+
+// 종이 자르기
+function solution(M, N) {
+  if (M === 1 && N === 1) {
+    return 0;
+  } else {
+    return M * N - 1;
   }
-  return result;
 }
-
-console.log(
-  solution(
-    ["meosseugi", "1234"],
-    [
-      ["meosseugi", "1234"],
-      ["rardss", "123"],
-      ["yyoom", "1234"],
-    ]
-  )
-);
-
-console.log(
-  solution(
-    ["programmer01", "15789"],
-    [
-      ["programmer02", "111111"],
-      ["programmer00", "134"],
-      ["programmer01", "1145"],
-    ]
-  )
-);
-console.log(
-  solution(
-    ["rabbit04", "98761"],
-    [
-      ["jaja11", "98761"],
-      ["rabbit00", "111333"],
-      ["krong0313", "29440"],
-    ]
-  )
-);
+console.log(solution(2, 2));
+console.log(solution(2, 5));
+console.log(solution(1, 1));
