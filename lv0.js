@@ -297,13 +297,28 @@
 // );
 
 // 종이 자르기
-function solution(M, N) {
-  if (M === 1 && N === 1) {
-    return 0;
-  } else {
-    return M * N - 1;
+// function solution(M, N) {
+//   if (M === 1 && N === 1) {
+//     return 0;
+//   } else {
+//     return M * N - 1;
+//   }
+// }
+// console.log(solution(2, 2));
+// console.log(solution(2, 5));
+// console.log(solution(1, 1));
+
+// 저주의 숫자 3
+function solution(n) {
+  let result = [];
+  for (let i = 1; i <= 200; i++) {
+    if (i % 3 === 0 || i % 10 === 3 || Math.floor(i / 10) === 3 || Math.floor(i / 10) === 13) {
+      continue;
+    }
+    result.push(i);
   }
+  return result[n - 1];
 }
-console.log(solution(2, 2));
-console.log(solution(2, 5));
-console.log(solution(1, 1));
+console.log(solution(100));
+console.log(solution(15));
+console.log(solution(40));
