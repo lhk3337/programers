@@ -208,35 +208,90 @@
 
 // 등수 매기기
 
-function solution(score) {
-  const avg = score.map((v) => v.reduce((acc, curr) => acc + curr, 0) / 2);
-  let ranker = Array(avg.length).fill(1);
+// function solution(score) {
+//   const avg = score.map((v) => v.reduce((acc, curr) => acc + curr, 0) / 2);
+//   let ranker = Array(avg.length).fill(1);
 
-  avg.forEach((e, i) => {
-    ranker.forEach((f, j) => {
-      if (e < avg[j]) {
-        ranker[i]++;
+//   avg.forEach((e, i) => {
+//     ranker.forEach((f, j) => {
+//       if (e < avg[j]) {
+//         ranker[i]++;
+//       }
+//     });
+//   });
+//   return ranker;
+// }
+// console.log(
+//   solution([
+//     [80, 70],
+//     [90, 50],
+//     [40, 70],
+//     [50, 80],
+//   ])
+// );
+// console.log(
+//   solution([
+//     [80, 70],
+//     [70, 80],
+//     [30, 50],
+//     [90, 100],
+//     [100, 90],
+//     [100, 100],
+//     [10, 30],
+//   ])
+// );
+
+// 로그인 성공?
+function solution(id_pw, db) {
+  const [id, pw] = id_pw;
+
+  let result = "";
+
+  for (let i = 0; i < db.length; i++) {
+    if (db[i][0] === id && db[i][1] === pw) {
+      result = "login";
+      break;
+    }
+    if (db[i][0] === id) {
+      if (db[i][1] !== pw) {
+        result = "wrong pw";
+        break;
       }
-    });
-  });
-  return ranker;
+    } else {
+      result = "fail";
+    }
+  }
+  return result;
 }
+
 console.log(
-  solution([
-    [80, 70],
-    [90, 50],
-    [40, 70],
-    [50, 80],
-  ])
+  solution(
+    ["meosseugi", "1234"],
+    [
+      ["meosseugi", "1234"],
+      ["rardss", "123"],
+      ["yyoom", "1234"],
+    ]
+  )
+);
+
+console.log(
+  solution(
+    ["programmer01", "15789"],
+    [
+      ["programmer02", "111111"],
+      ["programmer00", "134"],
+      ["programmer01", "1145"],
+    ]
+  )
 );
 console.log(
-  solution([
-    [80, 70],
-    [70, 80],
-    [30, 50],
-    [90, 100],
-    [100, 90],
-    [100, 100],
-    [10, 30],
-  ])
+  solution(
+    ["rabbit04", "98761"],
+    [
+      ["jaja11", "98761"],
+      ["rabbit00", "111333"],
+      ["krong0313", "29440"],
+    ]
+  )
 );
