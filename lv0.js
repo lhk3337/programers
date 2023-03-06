@@ -194,14 +194,49 @@
 // console.log(solution(3, 10, 2));
 
 // 잘라서 배열로 저장하기
-function solution(my_str, n) {
-  const arr = my_str.split("");
-  let answer = [];
-  for (let i = 0; i < arr.length; i += n) {
-    answer.push(arr.slice(i, i + n).join(""));
-  }
-  return answer;
-}
+// function solution(my_str, n) {
+//   const arr = my_str.split("");
+//   let answer = [];
+//   for (let i = 0; i < arr.length; i += n) {
+//     answer.push(arr.slice(i, i + n).join(""));
+//   }
+//   return answer;
+// }
 
-console.log(solution("abc1Addfggg4556b", 6));
-console.log(solution("abcdef123", 3));
+// console.log(solution("abc1Addfggg4556b", 6));
+// console.log(solution("abcdef123", 3));
+
+// 등수 매기기
+
+function solution(score) {
+  const avg = score.map((v) => v.reduce((acc, curr) => acc + curr, 0) / 2);
+  let ranker = Array(avg.length).fill(1);
+
+  avg.forEach((e, i) => {
+    ranker.forEach((f, j) => {
+      if (e < avg[j]) {
+        ranker[i]++;
+      }
+    });
+  });
+  return ranker;
+}
+console.log(
+  solution([
+    [80, 70],
+    [90, 50],
+    [40, 70],
+    [50, 80],
+  ])
+);
+console.log(
+  solution([
+    [80, 70],
+    [70, 80],
+    [30, 50],
+    [90, 100],
+    [100, 90],
+    [100, 100],
+    [10, 30],
+  ])
+);
