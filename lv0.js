@@ -309,16 +309,31 @@
 // console.log(solution(1, 1));
 
 // 저주의 숫자 3
-function solution(n) {
-  let result = [];
-  for (let i = 1; i <= 200; i++) {
-    if (i % 3 === 0 || i % 10 === 3 || Math.floor(i / 10) === 3 || Math.floor(i / 10) === 13) {
-      continue;
-    }
-    result.push(i);
+// function solution(n) {
+//   let result = [];
+//   for (let i = 1; i <= 200; i++) {
+//     if (i % 3 === 0 || i % 10 === 3 || Math.floor(i / 10) === 3 || Math.floor(i / 10) === 13) {
+//       continue;
+//     }
+//     result.push(i);
+//   }
+//   return result[n - 1];
+// }
+// console.log(solution(100));
+// console.log(solution(15));
+// console.log(solution(40));
+
+// 영어가 싫어요
+function solution(numbers) {
+  let numArr = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+
+  for (let i = 0; i < numArr.length; i++) {
+    // console.log(numbers.split(numArr[i]).join(i));
+    numbers = numbers.split(numArr[i]).join(i);
   }
-  return result[n - 1];
+
+  return Number(numbers);
 }
-console.log(solution(100));
-console.log(solution(15));
-console.log(solution(40));
+
+console.log(solution("onetwothreefourfivesixseveneightnine"));
+console.log(solution("onefourzerosixseven"));
