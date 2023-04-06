@@ -323,17 +323,44 @@
 // console.log(solution(15));
 // console.log(solution(40));
 
-// 영어가 싫어요
-function solution(numbers) {
-  let numArr = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+// // 영어가 싫어요
+// function solution(numbers) {
+//   let numArr = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
-  for (let i = 0; i < numArr.length; i++) {
-    // console.log(numbers.split(numArr[i]).join(i));
-    numbers = numbers.split(numArr[i]).join(i);
+//   for (let i = 0; i < numArr.length; i++) {
+//     // console.log(numbers.split(numArr[i]).join(i));
+//     numbers = numbers.split(numArr[i]).join(i);
+//   }
+
+//   return Number(numbers);
+// }
+
+// console.log(solution("onetwothreefourfivesixseveneightnine"));
+// console.log(solution("onefourzerosixseven"));
+
+// 문자열 계산기
+
+function solution(my_string) {
+  const strArr = my_string.split(" ");
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i] === "+") {
+      strArr[i] = `+${strArr[i + 1]}`;
+      strArr[i + 1] = "";
+    }
+    if (strArr[i] === "-") {
+      strArr[i] = `-${strArr[i + 1]}`;
+      strArr[i + 1] = "";
+    }
   }
 
-  return Number(numbers);
+  return strArr
+    .filter((v) => v !== "")
+    .map((v) => Number(v))
+    .reduce((a, b) => a + b, 0);
 }
 
-console.log(solution("onetwothreefourfivesixseveneightnine"));
-console.log(solution("onefourzerosixseven"));
+console.log(solution("- 3 - 4 - 3 - 2 - 4"));
+console.log(solution("1 - 20 + 30 - 4"));
+console.log(solution("3 + 4 + 5"));
+console.log(solution("3 + 4 - 5"));
