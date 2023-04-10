@@ -340,27 +340,47 @@
 
 // 문자열 계산기
 
-function solution(my_string) {
-  const strArr = my_string.split(" ");
+// function solution(my_string) {
+//   const strArr = my_string.split(" ");
 
-  for (let i = 0; i < strArr.length; i++) {
-    if (strArr[i] === "+") {
-      strArr[i] = `+${strArr[i + 1]}`;
-      strArr[i + 1] = "";
-    }
-    if (strArr[i] === "-") {
-      strArr[i] = `-${strArr[i + 1]}`;
-      strArr[i + 1] = "";
-    }
+//   for (let i = 0; i < strArr.length; i++) {
+//     if (strArr[i] === "+") {
+//       strArr[i] = `+${strArr[i + 1]}`;
+//       strArr[i + 1] = "";
+//     }
+//     if (strArr[i] === "-") {
+//       strArr[i] = `-${strArr[i + 1]}`;
+//       strArr[i + 1] = "";
+//     }
+//   }
+
+//   return strArr
+//     .filter((v) => v !== "")
+//     .map((v) => Number(v))
+//     .reduce((a, b) => a + b, 0);
+// }
+
+// console.log(solution("- 3 - 4 - 3 - 2 - 4"));
+// console.log(solution("1 - 20 + 30 - 4"));
+// console.log(solution("3 + 4 + 5"));
+// console.log(solution("3 + 4 - 5"));
+
+// 삼각형의 완성조건 (2)
+
+function solution(sides) {
+  let a = 0;
+  const min = Math.min(...sides);
+  const max = Math.max(...sides);
+
+  for (let j = max - min; j < max; j++) {
+    a++;
+  }
+  for (let i = max + 1; i < min + max; i++) {
+    a++;
   }
 
-  return strArr
-    .filter((v) => v !== "")
-    .map((v) => Number(v))
-    .reduce((a, b) => a + b, 0);
+  return a;
 }
-
-console.log(solution("- 3 - 4 - 3 - 2 - 4"));
-console.log(solution("1 - 20 + 30 - 4"));
-console.log(solution("3 + 4 + 5"));
-console.log(solution("3 + 4 - 5"));
+console.log(solution([1, 2]));
+console.log(solution([3, 6]));
+console.log(solution([7, 11]));
