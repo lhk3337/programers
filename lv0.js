@@ -367,20 +367,36 @@
 
 // 삼각형의 완성조건 (2)
 
-function solution(sides) {
-  let a = 0;
-  const min = Math.min(...sides);
-  const max = Math.max(...sides);
+// function solution(sides) {
+//   let a = 0;
+//   const min = Math.min(...sides);
+//   const max = Math.max(...sides);
 
-  for (let j = max - min; j < max; j++) {
-    a++;
-  }
-  for (let i = max + 1; i < min + max; i++) {
-    a++;
-  }
+//   for (let j = max - min; j < max; j++) {
+//     a++;
+//   }
+//   for (let i = max + 1; i < min + max; i++) {
+//     a++;
+//   }
 
-  return a;
+//   return a;
+// }
+// console.log(solution([1, 2]));
+// console.log(solution([3, 6]));
+// console.log(solution([7, 11]));
+
+// 최빈값
+function solution(array) {
+  if (array.length === 1) {
+    return array[0];
+  }
+  const result = {};
+  array.forEach((x) => {
+    result[x] = (result[x] || 0) + 1;
+  });
+
+  let sortedKeys = Object.keys(result).sort((a, b) => result[b] - result[a]);
+
+  if (result[sortedKeys[0]] === result[sortedKeys[1]]) return -1;
+  else return Number(sortedKeys[0]);
 }
-console.log(solution([1, 2]));
-console.log(solution([3, 6]));
-console.log(solution([7, 11]));
