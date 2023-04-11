@@ -386,17 +386,43 @@
 // console.log(solution([7, 11]));
 
 // 최빈값
-function solution(array) {
-  if (array.length === 1) {
-    return array[0];
+// function solution(array) {
+//   if (array.length === 1) {
+//     return array[0];
+//   }
+//   const result = {};
+//   array.forEach((x) => {
+//     result[x] = (result[x] || 0) + 1;
+//   });
+
+//   let sortedKeys = Object.keys(result).sort((a, b) => result[b] - result[a]);
+
+//   if (result[sortedKeys[0]] === result[sortedKeys[1]]) return -1;
+//   else return Number(sortedKeys[0]);
+// }
+
+// 연속된 수의 합
+
+function solution(num, total) {
+  if (total % num === 0) {
+    let arr = [];
+    const firstnum = total / num - Math.floor(num / 2);
+
+    for (let i = 0; i < num; i++) {
+      arr.push(i + firstnum);
+    }
+    return arr;
+  } else {
+    let arr = [];
+    const firstnum = Math.ceil(total / num - Math.floor(num / 2));
+    for (let i = 0; i < num; i++) {
+      arr.push(i + firstnum);
+    }
+    return arr;
   }
-  const result = {};
-  array.forEach((x) => {
-    result[x] = (result[x] || 0) + 1;
-  });
-
-  let sortedKeys = Object.keys(result).sort((a, b) => result[b] - result[a]);
-
-  if (result[sortedKeys[0]] === result[sortedKeys[1]]) return -1;
-  else return Number(sortedKeys[0]);
 }
+
+console.log(solution(3, 12));
+console.log(solution(5, 15));
+console.log(solution(4, 14));
+console.log(solution(5, 5));
