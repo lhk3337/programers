@@ -403,26 +403,40 @@
 
 // 연속된 수의 합
 
-function solution(num, total) {
-  if (total % num === 0) {
-    let arr = [];
-    const firstnum = total / num - Math.floor(num / 2);
+// function solution(num, total) {
+//   if (total % num === 0) {
+//     let arr = [];
+//     const firstnum = total / num - Math.floor(num / 2);
 
-    for (let i = 0; i < num; i++) {
-      arr.push(i + firstnum);
-    }
-    return arr;
-  } else {
-    let arr = [];
-    const firstnum = Math.ceil(total / num - Math.floor(num / 2));
-    for (let i = 0; i < num; i++) {
-      arr.push(i + firstnum);
-    }
-    return arr;
+//     for (let i = 0; i < num; i++) {
+//       arr.push(i + firstnum);
+//     }
+//     return arr;
+//   } else {
+//     let arr = [];
+//     const firstnum = Math.ceil(total / num - Math.floor(num / 2));
+//     for (let i = 0; i < num; i++) {
+//       arr.push(i + firstnum);
+//     }
+//     return arr;
+//   }
+// }
+
+// console.log(solution(3, 12));
+// console.log(solution(5, 15));
+// console.log(solution(4, 14));
+// console.log(solution(5, 5));
+
+// 치킨 쿠폰
+function solution(chicken) {
+  let result = 0;
+
+  while (chicken >= 10) {
+    result = result + Math.floor(chicken / 10);
+    chicken = (chicken % 10) + Math.floor(chicken / 10);
   }
+
+  return result;
 }
 
-console.log(solution(3, 12));
-console.log(solution(5, 15));
-console.log(solution(4, 14));
-console.log(solution(5, 5));
+console.log(solution(100));
